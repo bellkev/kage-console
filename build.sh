@@ -70,6 +70,6 @@ echo "Merging fonts..."
 )
 
 echo "Building final OTF font..."
-makeotf -ch ~/source/glyphwiki-afdko/HanaMinA.cmap \
+makeotf -ch "$build_dir/HanaMinA.cmap" \
   -f "$build_dir/KageConsoleA.raw" \
   -o "$build_dir/KageConsoleA.otf"
