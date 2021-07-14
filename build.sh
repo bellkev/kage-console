@@ -50,13 +50,13 @@ echo "Fetching Blocks.txt..."
 curl -L -o "$build_dir/Blocks.txt" "$blocks_url"
 
 echo "Generating glyph alias files..."
-generate_alias_file hanamin_alias hanamin_blocks HanaMinA.otf.cmap
+generate_alias_file hanamin_alias blocks/hanamin.txt HanaMinA.otf.cmap
 echo '0 0' >> "$build_dir/hanamin_alias"
-generate_alias_file code_pro_alias code_pro_blocks \
+generate_alias_file code_pro_alias blocks/code_pro.txt \
   HanaMinA.otf.cmap "${code_pro_dst_file}.cmap"
-generate_alias_file han_alias han_blocks \
+generate_alias_file han_alias blocks/han.txt \
   HanaMinA.otf.cmap "${han_dst_file}.cmap"
-generate_alias_file han_kr_alias han_kr_blocks \
+generate_alias_file han_kr_alias blocks/han_kr.txt \
   HanaMinA.otf.cmap "${han_kr_dst_file}.cmap"
 
 echo "Merging fonts..."

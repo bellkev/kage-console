@@ -20,7 +20,7 @@ An alternative solution is to build a custom font by merging together several ot
 ## How it works
 The `build.sh` script first downloads [Source Code Pro](https://github.com/adobe-fonts/source-code-pro), [Source Han Serif](https://github.com/adobe-fonts/source-han-serif), and Hanazono Mincho ([modified to include Extension G characters](https://github.com/bellkev/glyphwiki-afdko)) as inputs. Hanazono Mincho is a font derived from the data at [GlyphWiki](https://glyphwiki.org/). (It would be preferable to use sans-serif fonts across the board if possible, but the options to produce sans-serif fonts from GlyphWiki data are still quite limited. As a compromise, a sans-serif font is used for all Latin characters and serif fonts for all non-Latin CJKV scripts, providing pretty good quality and consistency.)
 
-Once downloaded, AFDKO tools are used to merge pieces of all the fonts together. The `*_blocks` files specify which [Unicode Blocks](http://www.unicode.org/Public/UNIDATA/Blocks.txt) to get from which font. The `ttx` tool is used dump the character code/glyph ID mappings for the input fonts, and `mapping.py` uses this data to create "glyph alias files" usable by AFDKO. The AFDKO `mergefonts` and `makeotf` tools can then be used to combine all the inputs into one output `KageConsoleA.otf` file that encodes all of the same characters as `HanaMinA.otf` from the Hanazono Mincho font.
+Once downloaded, AFDKO tools are used to merge pieces of all the fonts together. The `blocks/*.txt` files specify which [Unicode Blocks](http://www.unicode.org/Public/UNIDATA/Blocks.txt) to get from which font. The `ttx` tool is used dump the character code/glyph ID mappings for the input fonts, and `mapping.py` uses this data to create "glyph alias files" usable by AFDKO. The AFDKO `mergefonts` and `makeotf` tools can then be used to combine all the inputs into one output `KageConsoleA.otf` file that encodes all of the same characters as `HanaMinA.otf` from the Hanazono Mincho font.
 
 ## Building the font
 Building the font requires Python 3, Bash, and [AFDKO](https://github.com/adobe-type-tools/afdko). Assuming Git, Bash, and Python 3 are installed, you can build like this:
@@ -57,7 +57,7 @@ This font should be considered highly experimental. Use at your own risk.
 
 The current build process merges the input fonts quite naively. It would almost certainly benefit from additional modifications to the final font file (hints, metrics, etc) after merger.
 
-There is also no validation done yet to check for coverage of all the blocks specified in `*_blocks` files. Characters in some specified blocks (especially non-CJKV blocks) may be missing.
+There is also no validation done yet to check for coverage of all the blocks specified in `blocks/*.txt` files. Characters in some specified blocks (especially non-CJKV blocks) may be missing.
 
 ## Why "Kage Console"?
 The name refers to the [KAGE（影）system](http://kamichi.jp/kage.html) used on GlyphWiki to render relatively simple stroke information that can be edited on that site into the higher-resolution SVG paths that go into fonts.
