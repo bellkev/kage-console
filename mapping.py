@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 import re
 from signal import signal, SIGPIPE, SIG_DFL
 from xml.etree import ElementTree as ET

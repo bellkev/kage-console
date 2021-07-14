@@ -1,0 +1,15 @@
+┌────┐
+│abcd│
+│mnop│
+│漢字│
+└────┘
+This is some Latin text. 这是中文。
+これは漢字です。これはカタカナです。
+이것은 한글입니다. Đây là tiếng Việt.
+
+Extension A: 㐀㐁㐂㐃㐄 Extension B: 𠀀𠀁𠀂𠀃𠀄
+Extension C: 𪜀𪜁𪜂𪜃𪜄 Extension D: 𫝀𫝁𫝂𫝃𫝄
+Extension E: 𫠠𫠡𫠢𫠣𫠤 Extension F: 𬺰𬺱𬺲𬺳𬺴
+Extension G: 𰀀𰀁𰀂𰀃𰀄
+
+
